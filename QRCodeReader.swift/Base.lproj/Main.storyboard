@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iJy-fd-sAu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -46,10 +46,40 @@
                             <constraint firstAttribute="centerY" secondItem="P5n-CT-PTt" secondAttribute="centerY" id="fM5-Fa-KlF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="suc-5R-0ZO"/>
+                    <connections>
+                        <segue destination="XjE-pb-OOP" kind="show" id="xtS-0k-4GS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="429"/>
+            <point key="canvasLocation" x="1244" y="428.63568215892059"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nfL-8E-LiM">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G2v-1Z-mMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="XjE-pb-OOP" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bM8-Xo-ppp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iJy-fd-sAu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JCf-sM-kZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4PM-cj-XCG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3IU-pt-ixM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="428.63568215892059"/>
         </scene>
     </scenes>
 </document>

@@ -28,6 +28,10 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
+  
+    var id = "";
+    var ind = 35;
+    
   lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
     $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
     $0.showTorchButton = true
@@ -58,16 +62,33 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
   func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
     reader.stopScanning()
-
+ 
     dismiss(animated: true) { [weak self] in
-      let alert = UIAlertController(
-        title: "QRCodeReader",
-        message: String (format:"%@ (of type %@)", result.value, result.metadataType),
-        preferredStyle: .alert
-      )
-      alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-
-      self?.present(alert, animated: true, completion: nil)
+        let message = String (format:"%@ (of type %@)", result.value, result.metadataType);
+        
+        if !message.hasPrefix("asapserver.herokupp.com/api/social/") {
+            let alert = UIAlertController(
+                title: "Invalid QR Code!",
+                message: "Invalid QR code read. Please try again.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            self?.present(alert, animated: true, completion: nil)
+            
+            }
+        else{
+            let ind = message.index(message.startIndex, offsetBy: 35);
+            let alert = UIAlertController(
+                title: "It works --> ID below",
+                message: message.substring(from: ind),
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            self?.present(alert, animated: true, completion: nil)
+            
+        }
     }
   }
   
