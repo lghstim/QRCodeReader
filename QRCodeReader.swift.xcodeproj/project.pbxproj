@@ -17,7 +17,6 @@
 		CE412E9419D9A1E4000F294E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE412E9219D9A1E4000F294E /* Main.storyboard */; };
 		CE412E9619D9A1E4000F294E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE412E9519D9A1E4000F294E /* Images.xcassets */; };
 		CE412E9919D9A1E4000F294E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE412E9719D9A1E4000F294E /* LaunchScreen.xib */; };
-		CE412EA519D9A1E4000F294E /* QRCodeReader_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE412EA419D9A1E4000F294E /* QRCodeReader_swiftTests.swift */; };
 		CE4E1EDA1D81838F00D2AC35 /* QRCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1ED31D81838F00D2AC35 /* QRCodeReader.swift */; };
 		CE4E1EDB1D81838F00D2AC35 /* QRCodeReaderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1ED41D81838F00D2AC35 /* QRCodeReaderResult.swift */; };
 		CE4E1EDC1D81838F00D2AC35 /* QRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1ED51D81838F00D2AC35 /* QRCodeReaderViewController.swift */; };
@@ -99,8 +98,6 @@
 		CE412E9519D9A1E4000F294E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE412E9819D9A1E4000F294E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CE412E9E19D9A1E4000F294E /* QRCodeReader.swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeReader.swiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE412EA319D9A1E4000F294E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE412EA419D9A1E4000F294E /* QRCodeReader_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeReader_swiftTests.swift; sourceTree = "<group>"; };
 		CE4E1ED31D81838F00D2AC35 /* QRCodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReader.swift; sourceTree = "<group>"; };
 		CE4E1ED41D81838F00D2AC35 /* QRCodeReaderResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderResult.swift; sourceTree = "<group>"; };
 		CE4E1ED51D81838F00D2AC35 /* QRCodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeReaderViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +159,6 @@
 				6AB9DD4A1DD679E2003066DD /* QRCode */,
 				CE4E1ED21D81838F00D2AC35 /* QRCodeReader */,
 				CE412E8B19D9A1E4000F294E /* Example */,
-				CE412EA119D9A1E4000F294E /* ExampleTests */,
 				CEC20A871A14EF1400E7D0AD /* Resources */,
 				CE8FFED71BAB4E7F00D43F38 /* QRCodeReader */,
 				CE412E8A19D9A1E4000F294E /* Products */,
@@ -197,24 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				CE412E8D19D9A1E4000F294E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CE412EA119D9A1E4000F294E /* ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE412EA419D9A1E4000F294E /* QRCodeReader_swiftTests.swift */,
-				CE412EA219D9A1E4000F294E /* Supporting Files */,
-			);
-			name = ExampleTests;
-			path = QRCodeReader.swiftTests;
-			sourceTree = "<group>";
-		};
-		CE412EA219D9A1E4000F294E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CE412EA319D9A1E4000F294E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -435,7 +413,6 @@
 				CE4E1EE41D81839D00D2AC35 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				CE4E1EE11D81839D00D2AC35 /* QRCodeReader.swift in Sources */,
 				CE4E1EE31D81839D00D2AC35 /* QRCodeReaderViewController.swift in Sources */,
-				CE412EA519D9A1E4000F294E /* QRCodeReader_swiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

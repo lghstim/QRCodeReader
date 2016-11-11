@@ -27,11 +27,31 @@
 import UIKit
 import AVFoundation
 
+var id = "5"
+var website = "asapserver.herokupp.com/api/social/";
+
+
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
   
     var id = "";
-    var ind = 35;
     
+    @IBOutlet weak var imageViewLarge: UIImageView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // large
+        // default
+        imageViewLarge.image = {
+            var qrCode = QRCode(website+id)!
+            qrCode.size = self.imageViewLarge.bounds.size
+            qrCode.errorCorrection = .High
+            return qrCode.image
+        }()
+        
+    }
+
   lazy var reader = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
     $0.reader          = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
     $0.showTorchButton = true
@@ -79,14 +99,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             }
         else{
             let ind = message.index(message.startIndex, offsetBy: 35);
-            let alert = UIAlertController(
-                title: "It works --> ID below",
-                message: message.substring(from: ind),
-                preferredStyle: .alert
-            )
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            
-            self?.present(alert, animated: true, completion: nil)
+            self?.id = message.substring(from: ind)
             
         }
     }
