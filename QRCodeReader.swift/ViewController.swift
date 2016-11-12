@@ -11,7 +11,7 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
  *
- * The above copyright notice and this permission notice shall be included in
+ * The above copyright notice and tvar permission notice shall be included in
  * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -27,13 +27,14 @@
 import UIKit
 import AVFoundation
 
-var id = "5"
-var website = "asapserver.herokupp.com/api/social/";
+
 
 
 class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
   
-    var id = "";
+    var id = "5"
+    var website = "asapserver.herokupp.com/api/social/";
+    var message = ""
     
     @IBOutlet weak var imageViewLarge: UIImageView!
     
@@ -44,7 +45,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         // large
         // default
         imageViewLarge.image = {
-            var qrCode = QRCode(website+id)!
+            var qrCode = QRCode(website+id)! // hard coded
             qrCode.size = self.imageViewLarge.bounds.size
             qrCode.errorCorrection = .High
             return qrCode.image
@@ -84,9 +85,9 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     reader.stopScanning()
  
     dismiss(animated: true) { [weak self] in
-        let message = String (format:"%@ (of type %@)", result.value, result.metadataType);
+        self?.message = String (format: result.value);
         
-        if !message.hasPrefix("asapserver.herokupp.com/api/social/") {
+        if !(self?.message.hasPrefix("https://asapserver.herokuapp.com/api/social/"))! {
             let alert = UIAlertController(
                 title: "Invalid QR Code!",
                 message: "Invalid QR code read. Please try again.",
@@ -98,17 +99,22 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             
             }
         else{
-            self?.performSegue(withIdentifier: "openProfile", sender: self) // open other user's profile on scan
-            let ind = message.index(message.startIndex, offsetBy: 35);
-            self?.id = message.substring(from: ind)
+            self?.performSegue(withIdentifier: "openProfile", sender: self) // open other user's profile on scan if everything is ok
+            let ind = self?.message.index((self?.message.startIndex)!, offsetBy: 35);
+            self?.id = (self?.message.substring(from: ind!))!
+
         }
     }
   }
     
-  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if "openProfile" == segue.identifier {
-        // send url as data so can be processed as JSON in next VC
-    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if "openProfile" == segue.identifier {
+            if let destinationVC = segue.destination as? UserProfileViewController {
+                destinationVC.url = NSURL(string: self.message)
+            }
+        
+        }
   }
   
   func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
