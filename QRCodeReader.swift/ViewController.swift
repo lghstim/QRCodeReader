@@ -98,10 +98,16 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             
             }
         else{
+            self?.performSegue(withIdentifier: "openProfile", sender: self) // open other user's profile on scan
             let ind = message.index(message.startIndex, offsetBy: 35);
             self?.id = message.substring(from: ind)
-            
         }
+    }
+  }
+    
+  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if "openProfile" == segue.identifier {
+        // send url as data so can be processed as JSON in next VC
     }
   }
   

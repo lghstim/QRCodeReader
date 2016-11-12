@@ -34,7 +34,6 @@
                                 </state>
                                 <connections>
                                     <action selector="scanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tum-8Y-xC0"/>
-                                    <segue destination="ZKr-8S-0nC" kind="show" id="9ZI-Xm-arz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3w-Gl-DjA">
@@ -54,6 +53,7 @@
                     <navigationItem key="navigationItem" id="suc-5R-0ZO"/>
                     <connections>
                         <outlet property="imageViewLarge" destination="QEC-31-tiR" id="nRb-U4-2FF"/>
+                        <segue destination="ZKr-8S-0nC" kind="show" identifier="openProfile" id="Vox-bM-LDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
