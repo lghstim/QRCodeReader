@@ -87,7 +87,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     dismiss(animated: true) { [weak self] in
         self?.message = String (format: result.value);
         
-        if !(self?.message.hasPrefix("https://asapserver.herokuapp.com/api/social/"))! {
+        if !(self?.message.hasPrefix("https://asapserver.herokuapp.com/api/web/"))! {
             let alert = UIAlertController(
                 title: "Invalid QR Code!",
                 message: "Invalid QR code read. Please try again.",
@@ -99,6 +99,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             
             }
         else{
+            self?.message = (self?.message.replacingOccurrences(of: "web", with: "social", options: .literal, range: nil))! // replace web with social
             self?.performSegue(withIdentifier: "openProfile", sender: self) // open other user's profile on scan if everything is ok
             let ind = self?.message.index((self?.message.startIndex)!, offsetBy: 35);
             self?.id = (self?.message.substring(from: ind!))!
