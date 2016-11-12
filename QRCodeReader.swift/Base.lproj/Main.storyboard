@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iJy-fd-sAu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fSd-JC-Mez">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-31-tiR">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="IpR-8U-OjB"/>
+                                    <constraint firstAttribute="height" constant="222" id="Nvp-Tn-YIg"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5n-CT-PTt">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="155" id="O9u-YB-D6M"/>
@@ -28,69 +34,408 @@
                                 </state>
                                 <connections>
                                     <action selector="scanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tum-8Y-xC0"/>
+                                    <segue destination="ZKr-8S-0nC" kind="show" id="9ZI-Xm-arz"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-31-tiR">
-                                <frame key="frameInset" minX="85" minY="212" width="222" height="222"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="IpR-8U-OjB"/>
-                                    <constraint firstAttribute="height" constant="222" id="Nvp-Tn-YIg"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3w-Gl-DjA">
+                                <frame key="frameInset" minX="150" minY="617" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit profile"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QEC-31-tiR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BO1-iG-jT5"/>
                             <constraint firstAttribute="centerX" secondItem="P5n-CT-PTt" secondAttribute="centerX" constant="0.5" id="CeZ-ED-sHl"/>
-                            <constraint firstAttribute="centerY" secondItem="P5n-CT-PTt" secondAttribute="centerY" constant="249.5" id="fM5-Fa-KlF"/>
+                            <constraint firstAttribute="centerY" secondItem="P5n-CT-PTt" secondAttribute="centerY" constant="308.5" id="fM5-Fa-KlF"/>
                             <constraint firstItem="QEC-31-tiR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jaq-Fn-6O6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="suc-5R-0ZO"/>
                     <connections>
                         <outlet property="imageViewLarge" destination="QEC-31-tiR" id="nRb-U4-2FF"/>
-                        <segue destination="U8a-Nu-qk5" kind="show" id="apj-4b-B96"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="428.63568215892059"/>
+            <point key="canvasLocation" x="3020" y="1100"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hB7-xL-RUG">
+        <!--Submit View Controller-->
+        <scene sceneID="jlR-tg-ccx">
             <objects>
-                <viewController id="U8a-Nu-qk5" sceneMemberID="viewController">
+                <viewController id="NW2-so-0hf" customClass="SubmitViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Pxi-Br-oxG"/>
-                        <viewControllerLayoutGuide type="bottom" id="8OQ-bk-gJd"/>
+                        <viewControllerLayoutGuide type="top" id="Z3f-Kb-z46"/>
+                        <viewControllerLayoutGuide type="bottom" id="JhL-xh-RCj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="L5z-UB-FCU">
+                    <view key="view" contentMode="scaleToFill" id="zF7-ha-TIx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVd-Mq-lnf" customClass="SpringView" customModule="QRCodeReader_swift">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rl-MK-XnF">
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ASAP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN2-EN-k19">
+                                        <frame key="frameInset" minX="79" minY="61" width="142" height="28"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Snapchat username" textAlignment="center" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="FVo-Fu-AFg" customClass="DesignableTextField">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="4gh-iV-OMc"/>
+                                            <constraint firstAttribute="height" constant="44" id="NVq-ln-e8e"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4gh-iV-OMc"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Facebook username" textAlignment="center" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="NUN-xa-Zo3" customClass="DesignableTextField" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="0b1-Yr-GG6"/>
+                                            <constraint firstAttribute="height" constant="44" id="kdR-q6-2jI"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0b1-Yr-GG6"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Instagram username" textAlignment="center" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="KYT-xA-0I9" customClass="DesignableTextField" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="kTN-Bv-fHn"/>
+                                            <constraint firstAttribute="height" constant="44" id="o9f-kY-gXd"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="kTN-Bv-fHn"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Twitter handle" placeholder="Spotify username" textAlignment="center" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="MaA-WD-mBf" customClass="DesignableTextField" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="BjN-Rj-R9P"/>
+                                            <constraint firstAttribute="width" constant="250" id="evJ-yU-gju"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="evJ-yU-gju"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnQ-ku-SU6" customClass="DesignableButton" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.4431372549" green="0.78039215689999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="46k-gq-vqW"/>
+                                            <constraint firstAttribute="width" constant="250" id="zz6-ql-Ge6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Sign up"/>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="zz6-ql-Ge6"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="uy4-nK-mq2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="SnQ-ku-SU6" firstAttribute="top" secondItem="NUN-xa-Zo3" secondAttribute="bottom" constant="15" id="0RX-8a-QQv"/>
+                                    <constraint firstItem="lN2-EN-k19" firstAttribute="centerX" secondItem="5rl-MK-XnF" secondAttribute="centerX" id="0SZ-nu-2uf"/>
+                                    <constraint firstItem="KYT-xA-0I9" firstAttribute="top" secondItem="NUN-xa-Zo3" secondAttribute="bottom" constant="10" id="3XE-aW-ogr"/>
+                                    <constraint firstItem="MaA-WD-mBf" firstAttribute="trailing" secondItem="KYT-xA-0I9" secondAttribute="trailing" id="5N5-1y-vET"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="trailing" secondItem="NUN-xa-Zo3" secondAttribute="trailing" id="89H-Cb-iEa"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="top" secondItem="ZVd-Mq-lnf" secondAttribute="top" constant="104" id="8xB-8O-IK0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="99h-Rw-15j"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="centerX" secondItem="ZVd-Mq-lnf" secondAttribute="centerX" id="A5i-2f-IRS"/>
+                                    <constraint firstItem="lN2-EN-k19" firstAttribute="top" secondItem="5rl-MK-XnF" secondAttribute="bottom" constant="3" id="CxR-Q8-HCw"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="leading" secondItem="NUN-xa-Zo3" secondAttribute="leading" id="DgS-dl-zmt"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" id="EQU-vZ-kag"/>
+                                    <constraint firstItem="SnQ-ku-SU6" firstAttribute="top" secondItem="MaA-WD-mBf" secondAttribute="bottom" constant="15" id="H7F-3t-lMo"/>
+                                    <constraint firstItem="MaA-WD-mBf" firstAttribute="leading" secondItem="KYT-xA-0I9" secondAttribute="leading" id="S1B-oa-3vz"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="trailing" secondItem="SnQ-ku-SU6" secondAttribute="trailing" id="Xtf-Bb-IJD"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="centerX" secondItem="lN2-EN-k19" secondAttribute="centerX" id="bUJ-dJ-89I"/>
+                                    <constraint firstItem="MaA-WD-mBf" firstAttribute="top" secondItem="KYT-xA-0I9" secondAttribute="bottom" constant="10" id="bbJ-zY-30k"/>
+                                    <constraint firstAttribute="width" constant="300" id="fjZ-PZ-02t"/>
+                                    <constraint firstItem="SnQ-ku-SU6" firstAttribute="top" secondItem="NUN-xa-Zo3" secondAttribute="bottom" constant="115" id="gnL-8E-J7N"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="top" secondItem="lN2-EN-k19" secondAttribute="bottom" constant="15" id="jtv-Xq-UrY"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="leading" secondItem="ZVd-Mq-lnf" secondAttribute="leading" constant="25" id="lYa-L3-1mN"/>
+                                    <constraint firstItem="KYT-xA-0I9" firstAttribute="trailing" secondItem="NUN-xa-Zo3" secondAttribute="trailing" id="lnY-qz-kNY"/>
+                                    <constraint firstAttribute="height" constant="400" id="mAf-DL-z9a"/>
+                                    <constraint firstItem="FVo-Fu-AFg" firstAttribute="leading" secondItem="SnQ-ku-SU6" secondAttribute="leading" id="msd-U2-4Qb"/>
+                                    <constraint firstItem="NUN-xa-Zo3" firstAttribute="top" secondItem="FVo-Fu-AFg" secondAttribute="bottom" constant="10" id="sGa-pd-Etd"/>
+                                    <constraint firstItem="KYT-xA-0I9" firstAttribute="leading" secondItem="NUN-xa-Zo3" secondAttribute="leading" id="y9G-qS-00i"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideDown"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="99h-Rw-15j"/>
+                                        <exclude reference="EQU-vZ-kag"/>
+                                        <exclude reference="0RX-8a-QQv"/>
+                                        <exclude reference="gnL-8E-J7N"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4431372549" green="0.78039215689999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZVd-Mq-lnf" firstAttribute="centerY" secondItem="zF7-ha-TIx" secondAttribute="centerY" id="NO6-qf-r42"/>
+                            <constraint firstItem="ZVd-Mq-lnf" firstAttribute="centerX" secondItem="zF7-ha-TIx" secondAttribute="centerX" id="tZ1-KZ-ZTF"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pVU-Ag-mPr"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kvp-jb-bKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EcM-46-CxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="429"/>
+            <point key="canvasLocation" x="2183.1999999999998" y="1099.7001499250375"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="bM8-Xo-ppp">
+        <scene sceneID="Zw6-UQ-4dM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iJy-fd-sAu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fSd-JC-Mez" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JCf-sM-kZJ">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HwE-xd-DRP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4PM-cj-XCG"/>
+                        <segue destination="NW2-so-0hf" kind="relationship" relationship="rootViewController" id="Hs6-jK-LgU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3IU-pt-ixM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g91-5W-uXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.80000000000001" y="428.63568215892059"/>
+            <point key="canvasLocation" x="1244" y="1099.7001499250375"/>
+        </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="Txh-Gi-BP6">
+            <objects>
+                <viewController id="ZKr-8S-0nC" customClass="UserProfileViewController" customModule="QRCodeReader_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9hx-F5-kyd"/>
+                        <viewControllerLayoutGuide type="bottom" id="V1H-N9-9zW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TyZ-EQ-lD9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Of-8n-goo" customClass="SpringView" customModule="QRCodeReader_swift">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGL-qk-Aul" customClass="DesignableButton" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <color key="backgroundColor" red="1" green="0.9882352941176471" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="8cL-gI-VL5"/>
+                                            <constraint firstAttribute="height" constant="44" id="HsN-9H-owc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Add on Snapchat">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8cL-gI-VL5"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="addSnapchat:" destination="ZKr-8S-0nC" eventType="touchUpInside" id="LLK-k9-ilp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-Bk-jgw" customClass="DesignableButton" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="jQW-c0-cBr"/>
+                                            <constraint firstAttribute="height" constant="44" id="kWn-nH-du6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Add on Facebook">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jQW-c0-cBr"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="addFacebook:" destination="ZKr-8S-0nC" eventType="touchUpInside" id="TS9-Oj-cJn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-oJ-Rcq" customClass="DesignableButton" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.80392156862745101" green="0.28235294117647058" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="E0s-VY-XZM"/>
+                                            <constraint firstAttribute="width" constant="250" id="Vls-9Y-HEi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Follow on Instagram">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Vls-9Y-HEi"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="followInstagram:" destination="ZKr-8S-0nC" eventType="touchUpInside" id="baK-Ji-SDv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq9-ng-pCs" customClass="DesignableButton" customModule="QRCodeReader_swift" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="LNy-Kx-fb4"/>
+                                            <constraint firstAttribute="height" constant="44" id="fsn-VJ-qeD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Follow on Twitter">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="LNy-Kx-fb4"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="followTwitter:" destination="ZKr-8S-0nC" eventType="touchUpInside" id="qcf-sB-Szt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tim's profile:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLO-OI-jA1">
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="PGL-qk-Aul" firstAttribute="top" secondItem="MLO-OI-jA1" secondAttribute="bottom" constant="46" id="0pT-gt-cjK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="1sh-Q9-e27"/>
+                                    <constraint firstItem="MLO-OI-jA1" firstAttribute="centerX" secondItem="5Of-8n-goo" secondAttribute="centerX" id="Aqg-pm-BFi"/>
+                                    <constraint firstItem="XR8-Bk-jgw" firstAttribute="centerX" secondItem="5Of-8n-goo" secondAttribute="centerX" id="Cuk-pK-TVN"/>
+                                    <constraint firstAttribute="width" constant="300" id="Gv9-gy-h1U"/>
+                                    <constraint firstAttribute="height" constant="400" id="Jjf-oP-7vL"/>
+                                    <constraint firstItem="w0n-oJ-Rcq" firstAttribute="top" secondItem="XR8-Bk-jgw" secondAttribute="bottom" constant="10" id="PaY-cQ-B4y"/>
+                                    <constraint firstItem="XR8-Bk-jgw" firstAttribute="leading" secondItem="5Of-8n-goo" secondAttribute="leading" constant="25" id="Ruh-Yb-cz6"/>
+                                    <constraint firstItem="PGL-qk-Aul" firstAttribute="leading" secondItem="5Of-8n-goo" secondAttribute="leading" constant="25" id="Rva-xs-l4e"/>
+                                    <constraint firstItem="rq9-ng-pCs" firstAttribute="centerX" secondItem="5Of-8n-goo" secondAttribute="centerX" id="SQn-aZ-hnR"/>
+                                    <constraint firstItem="w0n-oJ-Rcq" firstAttribute="leading" secondItem="5Of-8n-goo" secondAttribute="leading" constant="25" id="Xnl-BK-i9W"/>
+                                    <constraint firstItem="PGL-qk-Aul" firstAttribute="centerX" secondItem="5Of-8n-goo" secondAttribute="centerX" id="ZMu-Sw-RaC"/>
+                                    <constraint firstItem="XR8-Bk-jgw" firstAttribute="top" secondItem="PGL-qk-Aul" secondAttribute="bottom" constant="10" id="bsD-u6-E8h"/>
+                                    <constraint firstItem="rq9-ng-pCs" firstAttribute="leading" secondItem="5Of-8n-goo" secondAttribute="leading" constant="25" id="hnS-0R-xAq"/>
+                                    <constraint firstItem="rq9-ng-pCs" firstAttribute="top" secondItem="w0n-oJ-Rcq" secondAttribute="bottom" constant="10" id="k3T-Yx-zqn"/>
+                                    <constraint firstAttribute="bottom" secondItem="rq9-ng-pCs" secondAttribute="bottom" constant="90" id="oLc-8V-SG1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" id="wfw-Om-aTc"/>
+                                    <constraint firstItem="w0n-oJ-Rcq" firstAttribute="centerX" secondItem="5Of-8n-goo" secondAttribute="centerX" id="zSL-kp-VGG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideDown"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1sh-Q9-e27"/>
+                                        <exclude reference="wfw-Om-aTc"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4431372549" green="0.78039215689999997" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Of-8n-goo" firstAttribute="centerY" secondItem="TyZ-EQ-lD9" secondAttribute="centerY" id="MND-4L-nnv"/>
+                            <constraint firstItem="5Of-8n-goo" firstAttribute="centerX" secondItem="TyZ-EQ-lD9" secondAttribute="centerX" id="cYs-mT-Gki"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0JH-LJ-Lao"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="facebookButton" destination="XR8-Bk-jgw" id="pJ3-Qj-Ltd"/>
+                        <outlet property="instagramButton" destination="w0n-oJ-Rcq" id="2ae-76-TqO"/>
+                        <outlet property="snapchatButton" destination="PGL-qk-Aul" id="wbP-G3-fvJ"/>
+                        <outlet property="twitterButton" destination="rq9-ng-pCs" id="dDj-AA-dX7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ri-f5-7iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3849" y="1100"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="input-outline" width="250" height="44"/>
+    </resources>
 </document>
