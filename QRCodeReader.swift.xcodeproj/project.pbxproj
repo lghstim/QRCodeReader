@@ -38,6 +38,9 @@
 		6A72CCA91DD6A0F70016E0CC /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72CC891DD6A0F70016E0CC /* TransitionZoom.swift */; };
 		6A72CCAA1DD6A0F70016E0CC /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A72CC8A1DD6A0F70016E0CC /* UnwindSegue.swift */; };
 		6A72CCAB1DD6A0F70016E0CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A72CC8C1DD6A0F70016E0CC /* Images.xcassets */; };
+		6A93F3531DD7AB11002EF3B6 /* MainMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93F3521DD7AB11002EF3B6 /* MainMenuVC.swift */; };
+		6AA2DCF21DD7E2F70047E0D0 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2DCF11DD7E2F70047E0D0 /* ContactsVC.swift */; };
+		6AA2DCF41DD7E5640047E0D0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA2DCF31DD7E5640047E0D0 /* SettingsVC.swift */; };
 		6AB9DD511DD67CDA003066DD /* CIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB9DD4B1DD67CDA003066DD /* CIColorExtension.swift */; };
 		6AB9DD521DD67CDA003066DD /* CIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB9DD4C1DD67CDA003066DD /* CIImageExtension.swift */; };
 		6AB9DD531DD67CDA003066DD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AB9DD4D1DD67CDA003066DD /* Info.plist */; };
@@ -45,7 +48,7 @@
 		6AB9DD551DD67CDA003066DD /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB9DD501DD67CDA003066DD /* UIImageViewExtension.swift */; };
 		6AFB753D1DD6AC3400394CB0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFB753C1DD6AC3400394CB0 /* UserProfileViewController.swift */; };
 		CE412E8F19D9A1E4000F294E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE412E8E19D9A1E4000F294E /* AppDelegate.swift */; };
-		CE412E9119D9A1E4000F294E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE412E9019D9A1E4000F294E /* ViewController.swift */; };
+		CE412E9119D9A1E4000F294E /* ScanShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE412E9019D9A1E4000F294E /* ScanShareViewController.swift */; };
 		CE412E9419D9A1E4000F294E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE412E9219D9A1E4000F294E /* Main.storyboard */; };
 		CE412E9619D9A1E4000F294E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE412E9519D9A1E4000F294E /* Images.xcassets */; };
 		CE412E9919D9A1E4000F294E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE412E9719D9A1E4000F294E /* LaunchScreen.xib */; };
@@ -147,6 +150,9 @@
 		6A72CC891DD6A0F70016E0CC /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		6A72CC8A1DD6A0F70016E0CC /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		6A72CC8C1DD6A0F70016E0CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6A93F3521DD7AB11002EF3B6 /* MainMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
+		6AA2DCF11DD7E2F70047E0D0 /* ContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
+		6AA2DCF31DD7E5640047E0D0 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		6AB9DD4B1DD67CDA003066DD /* CIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIColorExtension.swift; sourceTree = "<group>"; };
 		6AB9DD4C1DD67CDA003066DD /* CIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIImageExtension.swift; sourceTree = "<group>"; };
 		6AB9DD4D1DD67CDA003066DD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,7 +163,7 @@
 		CE412E8919D9A1E4000F294E /* QRCodeReader.swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReader.swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE412E8D19D9A1E4000F294E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE412E8E19D9A1E4000F294E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE412E9019D9A1E4000F294E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE412E9019D9A1E4000F294E /* ScanShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanShareViewController.swift; sourceTree = "<group>"; };
 		CE412E9319D9A1E4000F294E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE412E9519D9A1E4000F294E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE412E9819D9A1E4000F294E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -298,8 +304,11 @@
 			isa = PBXGroup;
 			children = (
 				CE412E8E19D9A1E4000F294E /* AppDelegate.swift */,
-				CE412E9019D9A1E4000F294E /* ViewController.swift */,
 				CE412E9219D9A1E4000F294E /* Main.storyboard */,
+				6AA2DCF11DD7E2F70047E0D0 /* ContactsVC.swift */,
+				6AA2DCF31DD7E5640047E0D0 /* SettingsVC.swift */,
+				6A93F3521DD7AB11002EF3B6 /* MainMenuVC.swift */,
+				CE412E9019D9A1E4000F294E /* ScanShareViewController.swift */,
 				6AFB753C1DD6AC3400394CB0 /* UserProfileViewController.swift */,
 				CE412E9519D9A1E4000F294E /* Images.xcassets */,
 				CE412E9719D9A1E4000F294E /* LaunchScreen.xib */,
@@ -509,6 +518,7 @@
 				6A72CCA61DD6A0F70016E0CC /* SpringTextView.swift in Sources */,
 				CE4E1EE01D81838F00D2AC35 /* ToggleTorchButton.swift in Sources */,
 				CE4E1EDF1D81838F00D2AC35 /* SwitchCameraButton.swift in Sources */,
+				6AA2DCF41DD7E5640047E0D0 /* SettingsVC.swift in Sources */,
 				6A72CC9A1DD6A0F70016E0CC /* ImageLoader.swift in Sources */,
 				6A72CCA31DD6A0F70016E0CC /* SpringImageView.swift in Sources */,
 				6A72CC981DD6A0F70016E0CC /* DesignableTextView.swift in Sources */,
@@ -525,7 +535,8 @@
 				CE4E1EDD1D81838F00D2AC35 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				6A72CCAA1DD6A0F70016E0CC /* UnwindSegue.swift in Sources */,
 				6A72CC9F1DD6A0F70016E0CC /* SoundPlayer.swift in Sources */,
-				CE412E9119D9A1E4000F294E /* ViewController.swift in Sources */,
+				CE412E9119D9A1E4000F294E /* ScanShareViewController.swift in Sources */,
+				6AA2DCF21DD7E2F70047E0D0 /* ContactsVC.swift in Sources */,
 				CE412E8F19D9A1E4000F294E /* AppDelegate.swift in Sources */,
 				6A72CC8E1DD6A0F70016E0CC /* README.md in Sources */,
 				CEBE11091DB8C73700F21CD8 /* QRCodeReaderViewContainer.swift in Sources */,
@@ -544,6 +555,7 @@
 				6A72CCA71DD6A0F70016E0CC /* SpringView.swift in Sources */,
 				6A72CC951DD6A0F70016E0CC /* DesignableLabel.swift in Sources */,
 				6AB9DD541DD67CDA003066DD /* QRCode.swift in Sources */,
+				6A93F3531DD7AB11002EF3B6 /* MainMenuVC.swift in Sources */,
 				6A72CCA21DD6A0F70016E0CC /* SpringButton.swift in Sources */,
 				6A72CCA11DD6A0F70016E0CC /* SpringAnimation.swift in Sources */,
 				6A72CCA51DD6A0F70016E0CC /* SpringTextField.swift in Sources */,

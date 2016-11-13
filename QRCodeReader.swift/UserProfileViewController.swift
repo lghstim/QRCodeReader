@@ -10,22 +10,32 @@ import Foundation
 import UIKit
 
 class UserProfileViewController: UIViewController {
-    @IBOutlet weak var snapchatButton: DesignableButton!
-    @IBOutlet weak var facebookButton: DesignableButton!
-    @IBOutlet weak var instagramButton: DesignableButton!
-    @IBOutlet weak var twitterButton: DesignableButton!
+    @IBOutlet weak var snapchatButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var instagramButton: UIButton!
+    @IBOutlet weak var twitterButton: UIButton!
     var snapchatName = "";
     var facebookURL = "";
+    var linkedinURL = "";
+    var youtubeURL = "";
     var twitterName = "";
     var instagramName = "";
+    var emailString = "";
+    var nameString = "";
+    var phoneNumberInt : Int = 0
     var url = NSURL(string: "")
+    
+    @IBOutlet weak var youtubeButton: UIButton!
+    @IBOutlet weak var linkedinButton: UIButton!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
+    @IBOutlet weak var name: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("URL:")
         print(self.url)
         self.downloadData()
-        
     }
 
     
@@ -49,7 +59,7 @@ class UserProfileViewController: UIViewController {
                     let responseString = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! NSDictionary //because JSON data started with dictionary. Not an array
                     if let twitter = responseString["twitter"] as? String {
                         self.twitterName = twitter
-                        print("twitter name:" + "," + self.twitterName)
+                        print("twitter name:" + " " + self.twitterName)
                     }
                     
                     else {
@@ -57,24 +67,76 @@ class UserProfileViewController: UIViewController {
                     }
                     if let instagram = responseString["instagram"] as? String {
                         self.instagramName = instagram
-                        print("insta name" + "," + self.instagramName)
+                        print("insta name" + " " + self.instagramName)
                     }
                     else {
                         self.instagramButton.isUserInteractionEnabled = false;
                     }
                     if let snapchat = responseString["snapchat"] as? String {
                         self.snapchatName = snapchat
-                        print("snapchat name" + "," + self.snapchatName)
+                        print("snapchat name" + " " + self.snapchatName)
                     }
                     else {
                         self.snapchatButton.isUserInteractionEnabled = false;
                     }
                     if let facebook = responseString["facebook"] as? String {
                         self.facebookURL = facebook
-                        print("facebook URL" + "," + self.facebookURL)
+                        print("facebook URL" + " " + self.facebookURL)
                     }
                     else {
                         self.facebookButton.isUserInteractionEnabled = false;
+                    }
+                    
+                    if let email = responseString["email"] as? String {
+                        self.emailString = email
+                        print("email" + " " + self.emailString)
+                    }
+                    
+                    else {
+                        self.email.text = "No email"
+
+                    }
+                   
+                    if let phoneNumber = responseString["phone"] as? Int {
+                        self.phoneNumberInt = phoneNumber
+                        print("phone number" + " " + "\(self.phoneNumberInt)")
+                    }
+                    
+                    else {
+                        self.phoneNumber.text = "No phone number"
+                    }
+                    
+                    if let name = responseString["name"] as? String {
+                        self.nameString = name
+                        print("name" + " " + self.nameString)
+                    }
+                        
+                    else {
+                        self.phoneNumber.text = "No phone number"
+                    }
+                    
+                    if let linkedin = responseString["linkedin"] as? String {
+                        self.linkedinURL = linkedin
+                        print("linked in" + " " + self.linkedinURL)
+                    }
+                    
+                    else {
+                        self.linkedinButton.isUserInteractionEnabled = false;
+                    }
+                    
+                    if let youtube = responseString["youtube"] as? String {
+                        self.youtubeURL = youtube
+                        print("youtube" + " " + self.youtubeURL)
+                    }
+                        
+                    else {
+                        self.youtubeButton.isUserInteractionEnabled = false;
+                    }
+                    
+                    DispatchQueue.main.sync {
+                            self.phoneNumber.text = "\(self.phoneNumberInt)"
+                            self.email.text = self.emailString
+                            self.name.text = self.nameString
                     }
                 }
             }
@@ -158,7 +220,49 @@ class UserProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func backButtonDidPress(_ sender: AnyObject) {
+    @IBAction func connectLinkedin(_ sender: AnyObject) {
+        if let url = URL(string: self.linkedinURL) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: {
+                    (success) in
+                    print("Open \(self.linkedinURL): \(success)")
+                    UIApplication.shared.openURL(url as URL)
+                    
+                })
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+    
+    @IBAction func subscribeYouTube(_ sender: AnyObject) {
+        if let url = URL(string: self.youtubeURL) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: {
+                    (success) in
+                    print("Open \(self.youtubeURL): \(success)")
+                    UIApplication.shared.openURL(url as URL)
+                    
+                })
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+    
+    @IBAction func homeButtonDidPress(_ sender: AnyObject) {
         
+        if let viewControllers = navigationController?.viewControllers {
+            for viewController in viewControllers {
+                if viewController is MainMenuVC {
+                    navigationController?.popToViewController(viewController, animated: true)
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func backButtonDidPress(_ sender: AnyObject) {
+        navigationController?.popViewController(animated:true)
     }
 }

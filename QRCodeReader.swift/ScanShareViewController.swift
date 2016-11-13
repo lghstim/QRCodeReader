@@ -30,11 +30,12 @@ import AVFoundation
 
 
 
-class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
+class ScanShareViewController: UIViewController, QRCodeReaderViewControllerDelegate {
   
     var id = "5"
-    var website = "asapserver.herokupp.com/api/social/";
+    var website = "https://asapserver.herokuapp.com/api/web/";
     var message = ""
+    var openScanner = false;
     
     @IBOutlet weak var imageViewLarge: UIImageView!
     
@@ -45,11 +46,16 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         // large
         // default
         imageViewLarge.image = {
-            var qrCode = QRCode(website+id)! // hard coded
+            var qrCode = QRCode(website+id)! // hard coded QR code
             qrCode.size = self.imageViewLarge.bounds.size
             qrCode.errorCorrection = .High
             return qrCode.image
         }()
+        
+        // open scanner if user pressed scan button in MainMenuVC
+        if self.openScanner == true {
+            self.scanAction(self)
+        }
         
     }
 
@@ -129,4 +135,16 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
     dismiss(animated: true, completion: nil)
   }
+    
+    @IBAction func homeButtonDidPress(_ sender: AnyObject) {
+        if let viewControllers = navigationController?.viewControllers {
+            for viewController in viewControllers {
+                if viewController is MainMenuVC {
+                    navigationController?.popToViewController(viewController, animated: true)
+                }
+            }
+        }
+    }
+    
+    
 }
